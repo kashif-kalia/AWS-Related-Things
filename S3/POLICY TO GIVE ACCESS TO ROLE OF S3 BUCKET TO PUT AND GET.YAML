@@ -1,0 +1,19 @@
+In this policy we will create a Role then we will give permission in s3 bucket permission tab and attach this role to resources who want to put and get in s3 bucket.
+
+{
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::209258198235:role/mhb-app-uat-role-20221119122019954300000003"
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::mhb-uat-app-uploads/*",
+                "arn:aws:s3:::mhb-uat-app-uploads"
+            ]
+        }
+    ]
+}
