@@ -1,0 +1,41 @@
+1) FOR THE WORKER NODE THERE SHOULD BE SOME MANAGED POLICY ATTACHED TO EKS ARE GIVEN BELOW:-
+
+i):-   AmazonEC2ContainerRegistryReadOnly
+ii):-  AmazonEKS_CNI_Policy
+iii):- AmazonEKSWorkerNodePolicy
+
+2) FOR THE MASTER NODE POLICY ARE GIVEN BELOW:-
+
+i):-  AmazonEKSClusterPolicy
+ii):- AmazonEKSVPCResourceController
+iii):- ethos-tif-int-eks-A7EnfT30-cluster (self-managed)
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "logs:CreateLogGroup"
+            ],
+            "Effect": "Deny",
+            "Resource": "*"
+        }
+    ]
+}
+
+iv):- ethos-tif-int-eks-A7EnfT30-cluster-ClusterEncryption2023120317342071580000000e
+
+{
+    "Statement": [
+        {
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ListGrants",
+                "kms:DescribeKey"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:kms:eu-west-2:622905996173:key/00686537-ebce-4dc9-8109-33b34a476702"
+        }
+    ],
+    "Version": "2012-10-17"
+}
