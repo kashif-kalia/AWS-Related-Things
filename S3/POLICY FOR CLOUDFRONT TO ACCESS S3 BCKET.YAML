@@ -1,0 +1,16 @@
+This policy will be used if cloudfront want to access s3 bucket.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E34VPER2E3UVQF"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::mhb-uat-app/*"
+        }
+    ]
+}
