@@ -19,3 +19,30 @@ This policy should be attached to service account and used for allow iam to acce
     ],
     "Version": "2012-10-17"
 }
+
+Another policy used :-
+
+
+{
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::tif-int-msk-claim-check"
+            ],
+            "Sid": "ListObjectsInBucket"
+        },
+        {
+            "Action": "s3:*Object",
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::tif-int-msk-claim-check/*"
+            ],
+            "Sid": "AllObjectActions"
+        }
+    ],
+    "Version": "2012-10-17"
+}
